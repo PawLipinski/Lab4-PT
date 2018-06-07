@@ -39,6 +39,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.intelligenceBox = new System.Windows.Forms.NumericUpDown();
             this.strengthBox = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.heroGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strengthBox)).BeginInit();
@@ -137,11 +138,22 @@
             this.strengthBox.Size = new System.Drawing.Size(120, 20);
             this.strengthBox.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(406, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Sortuj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 453);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.strengthBox);
             this.Controls.Add(this.intelligenceBox);
             this.Controls.Add(this.addButton);
@@ -176,6 +188,7 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.NumericUpDown intelligenceBox;
         private System.Windows.Forms.NumericUpDown strengthBox;
+        private System.Windows.Forms.Button button1;
     }
 }
 
