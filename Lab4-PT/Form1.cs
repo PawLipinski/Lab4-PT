@@ -26,6 +26,9 @@ namespace Lab4_PT
 
             heroGrid.DataSource = listOfHeroes;
             heroGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+            this.filterProfessionBox.DataSource = professions;
+            this.filterProfessionBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void nameBox_TextChanged(object sender, EventArgs e)
@@ -49,6 +52,29 @@ namespace Lab4_PT
             this.listOfHeroes = new BindingList<Hero>(tempList);
 
             this.heroGrid.DataSource = this.listOfHeroes;
+        }
+
+        private void filter1_Click(object sender, EventArgs e)
+        {
+            if (this.heroGrid.DataSource == this.listOfHeroes)
+            {
+
+                List<Hero> tempList = this.listOfHeroes.ToList<Hero>();
+
+                string tempProfession = this.professionBox.Text;
+
+                var v = from x in tempList where x.Profession == tempProfession select x;
+
+                this.heroGrid.DataSource = new BindingList<Hero>(v.ToList<Hero>());
+
+                this.filter1.BackColor = Color.Red;
+
+            }
+            else
+            {
+                this.heroGrid.DataSource = this.listOfHeroes;
+                this.filter1.BackColor = Color.LightGray;
+            }
         }
 
         private class HeroComparer : IComparer<Hero>
@@ -76,13 +102,83 @@ namespace Lab4_PT
                     }
                     else return -1;
                 }
-                else if (Form1.professions.IndexOf(x.Profession)<Form1.professions.IndexOf(y.Profession))
+                else if (Form1.professions.IndexOf(x.Profession) < Form1.professions.IndexOf(y.Profession))
                 {
                     return 1;
                 }
                 else return -1;
-                
+
             }
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void filter2_Click(object sender, EventArgs e)
+        {
+
+            if (this.heroGrid.DataSource == this.listOfHeroes)
+            {
+
+                List<Hero> tempList = this.listOfHeroes.ToList<Hero>();
+
+                int tempStrength = (int)this.strengthFilterBox.Value;
+
+                var v = tempList.Select(x =>
+                {
+                    if (x.Strength > tempStrength)
+                    {
+                        return x;
+                    }
+                    else return null;
+                });
+
+                //var x = tempList
+
+                this.heroGrid.DataSource = new BindingList<Hero>(v.ToList<Hero>());
+
+                this.filter2.BackColor = Color.Red;
+
+            }
+            else
+            {
+                this.heroGrid.DataSource = this.listOfHeroes;
+                this.filter2.BackColor = Color.LightGray;
+            }
+
+        }
+
+        private void filter3_Click(object sender, EventArgs e)
+        {
+
+            if (this.heroGrid.DataSource == this.listOfHeroes)
+            {
+
+                List<Hero> tempList = this.listOfHeroes.ToList<Hero>();
+
+                string tempProfession = this.professionBox.Text;
+
+                var v = from x in tempList where x.Profession == tempProfession select x;
+
+                this.heroGrid.DataSource = new BindingList<Hero>(v.ToList<Hero>());
+
+                this.filter2.BackColor = Color.Red;
+
+            }
+            else
+            {
+                this.heroGrid.DataSource = this.listOfHeroes;
+                this.filter2.BackColor = Color.LightGray;
+            }
+
+        }
+
     }
 }

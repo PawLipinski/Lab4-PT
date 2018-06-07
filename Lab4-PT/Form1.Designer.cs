@@ -40,9 +40,20 @@
             this.intelligenceBox = new System.Windows.Forms.NumericUpDown();
             this.strengthBox = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.filterProfessionBox = new System.Windows.Forms.ComboBox();
+            this.filter1 = new System.Windows.Forms.Button();
+            this.filter2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.strengthFilterBox = new System.Windows.Forms.NumericUpDown();
+            this.intelligenceFilterBox = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.filter3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.heroGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strengthBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.strengthFilterBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intelligenceFilterBox)).BeginInit();
             this.SuspendLayout();
             // 
             // heroGrid
@@ -148,11 +159,99 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(486, 231);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Filtruj";
+            // 
+            // filterProfessionBox
+            // 
+            this.filterProfessionBox.FormattingEnabled = true;
+            this.filterProfessionBox.Location = new System.Drawing.Point(402, 257);
+            this.filterProfessionBox.Name = "filterProfessionBox";
+            this.filterProfessionBox.Size = new System.Drawing.Size(121, 21);
+            this.filterProfessionBox.TabIndex = 15;
+            // 
+            // filter1
+            // 
+            this.filter1.Location = new System.Drawing.Point(529, 257);
+            this.filter1.Name = "filter1";
+            this.filter1.Size = new System.Drawing.Size(75, 23);
+            this.filter1.TabIndex = 16;
+            this.filter1.Text = "Pokaż";
+            this.filter1.UseVisualStyleBackColor = true;
+            this.filter1.Click += new System.EventHandler(this.filter1_Click);
+            // 
+            // filter2
+            // 
+            this.filter2.Location = new System.Drawing.Point(529, 284);
+            this.filter2.Name = "filter2";
+            this.filter2.Size = new System.Drawing.Size(75, 23);
+            this.filter2.TabIndex = 18;
+            this.filter2.Text = "Pokaż";
+            this.filter2.UseVisualStyleBackColor = true;
+            this.filter2.Click += new System.EventHandler(this.filter2_Click);
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(419, 289);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Siła >";
+            // 
+            // strengthFilterBox
+            // 
+            this.strengthFilterBox.Location = new System.Drawing.Point(470, 287);
+            this.strengthFilterBox.Name = "strengthFilterBox";
+            this.strengthFilterBox.Size = new System.Drawing.Size(57, 20);
+            this.strengthFilterBox.TabIndex = 20;
+            // 
+            // intelligenceFilterBox
+            // 
+            this.intelligenceFilterBox.Location = new System.Drawing.Point(470, 316);
+            this.intelligenceFilterBox.Name = "intelligenceFilterBox";
+            this.intelligenceFilterBox.Size = new System.Drawing.Size(57, 20);
+            this.intelligenceFilterBox.TabIndex = 23;
+            this.intelligenceFilterBox.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(392, 318);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Inteligencja >";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // filter3
+            // 
+            this.filter3.Location = new System.Drawing.Point(529, 313);
+            this.filter3.Name = "filter3";
+            this.filter3.Size = new System.Drawing.Size(75, 23);
+            this.filter3.TabIndex = 21;
+            this.filter3.Text = "Pokaż";
+            this.filter3.UseVisualStyleBackColor = true;
+            this.filter3.Click += new System.EventHandler(this.filter3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 453);
+            this.Controls.Add(this.intelligenceFilterBox);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.filter3);
+            this.Controls.Add(this.strengthFilterBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.filter2);
+            this.Controls.Add(this.filter1);
+            this.Controls.Add(this.filterProfessionBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.strengthBox);
             this.Controls.Add(this.intelligenceBox);
@@ -170,6 +269,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.heroGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intelligenceBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strengthBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.strengthFilterBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intelligenceFilterBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +290,15 @@
         private System.Windows.Forms.NumericUpDown intelligenceBox;
         private System.Windows.Forms.NumericUpDown strengthBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox filterProfessionBox;
+        private System.Windows.Forms.Button filter1;
+        private System.Windows.Forms.Button filter2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown strengthFilterBox;
+        private System.Windows.Forms.NumericUpDown intelligenceFilterBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button filter3;
     }
 }
 
